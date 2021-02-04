@@ -1,0 +1,16 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .loginContainer {
+        background-color: violet;
+        display: flex;
+        width: 25%;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 2%;
+    }
+}
+

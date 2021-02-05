@@ -6,7 +6,7 @@ const Login = (props) => {
             handleSignup, hasAccount, setHasAccount, emailError, passwordError } = props;
     return ( 
         <section className="login">
-            <div className="loginContainer">
+            <div className="login-container">
                 <label>Username</label>
                 <input 
                     type="text"

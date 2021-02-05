@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import fire from './utils/fire';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import LandingPage from './components/LandingPage/LandingPage';
 
 
 function App() {
@@ -80,28 +83,38 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {user ? (
-        <Home
+    <Router>
+      <div className="App">        
+        <Navbar 
+        isUser={user}
         handleLogout={handleLogout}
-      /> 
-      ) : (
-      <Login
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        handleLogin={handleLogin}
-        handleSignup={handleSignup}
-        hasAccount={hasAccount}
-        setHasAccount={setHasAccount}
-        emailError={emailError}
-        passwordError={setPasswordError}
-      />
-      )}
-      
-      
-    </div>
+        />
+          <Switch>
+            { !user ? 
+            <Route exact path="/">
+                <LandingPage/> 
+            </Route>
+            :          
+            <Route Redirect to="/home" component={Home}/>        
+            }  
+
+            <Route path="/login">
+              <Login
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword}
+                handleLogin={handleLogin}
+                handleSignup={handleSignup}
+                hasAccount={hasAccount}
+                setHasAccount={setHasAccount}
+                emailError={emailError}
+                passwordError={setPasswordError}
+              />
+            </Route>        
+          </Switch>
+      </div>
+    </Router>
   );
 }
 

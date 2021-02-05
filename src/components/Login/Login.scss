@@ -1,16 +1,55 @@
 .login {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
     
 
-    .loginContainer {
-        background-color: violet;
+    .login-container {
+        background-color: rgb(127, 94, 204);
         display: flex;
-        width: 25%;
+        width: 15%;        
         flex-direction: column;
         justify-content: space-around;
         padding: 2%;
+        margin-top: -10%;
+        box-shadow: 10px 10px 5px grey;
+                
+
+        input {
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border-radius: 6px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            background: rgb(29, 1, 65);
+            border-radius: 6px;
+            padding: 0.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .errorMsg {
+            color: rgb(73, 187, 149);
+            font-weight: bold;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        span {
+            padding: 0.5rem;
+            border-radius: 6px;
+            &:hover {
+                background: yellowgreen;
+            }
+        }
     }
 }
 

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthenticationContext } from '../../contexts/AuthenticationContext';
 import './Login.scss';
 
 const Login = (props) => {
     const { email, setEmail, password, setPassword, handleLogin, 
-            handleSignup, hasAccount, setHasAccount, emailError, passwordError } = props;
+            handleSignup, hasAccount, setHasAccount, emailError, passwordError } = useContext(AuthenticationContext);
     return ( 
         <section className="login">
             <div className="login-container">

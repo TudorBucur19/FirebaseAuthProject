@@ -1,0 +1,27 @@
+.user-info {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 90vh;
+}
+
+.user-info__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+    background-color: violet;
+    align-items: flex-start;
+    border-radius: 6px;
+    box-shadow: 10px 10px 5px grey;
+
+
+    .user-info__container__photo {
+       padding: 1%;
+       align-self: center;
+    }
+
+    .user-info__container__text {
+        padding: 1% 1% 1% 2%;
+        max-width: 60%;
+    }
+}

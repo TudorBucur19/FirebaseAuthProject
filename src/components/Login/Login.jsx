@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthenticationContext } from '../../contexts/AuthenticationContext';
 import './Login.scss';
 
-const Login = (props) => {
+const Login = () => {
     const { email, setEmail, password, setPassword, handleLogin, 
             handleSignup, hasAccount, setHasAccount, emailError, passwordError } = useContext(AuthenticationContext);
     return ( 

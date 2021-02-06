@@ -9,8 +9,15 @@ const Navbar = () => {
 
     return ( 
         <div className="navbar">  
-            <div className="navbar-logo"><h2>Logo</h2></div>          
-            <div className="navbar-links">
+            <div className="navbar-logo"><h2>Logo</h2></div>
+            <div className="navbar-menuItems">
+                <ul>
+                    <Link to="/users">
+                        <li>Users</li>  
+                    </Link>
+                </ul>    
+            </div>          
+            <div className="navbar-log">
                 { user ? 
                 <Link to="/">
                     <h3 onClick={handleLogout}>Logout</h3>

@@ -5,4 +5,25 @@
     justify-content: space-between;
     padding: 0 3% 0 3%;
     cursor: pointer;
+    font-weight: bold;
+
+    .navbar-logo {
+        flex-grow: 1;
+    }
+
+    .navbar-menuItems {
+        display: flex;
+        flex-grow: 6;
+        font-size: 1.3em;
+
+        ul {
+            list-style: none;       
+        }
+    }
+
+    .navbar-log {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;        
+    }
 }

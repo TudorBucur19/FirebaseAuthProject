@@ -3,8 +3,19 @@ import { AuthenticationContext } from '../../contexts/AuthenticationContext';
 import './Login.scss';
 
 const Login = () => {
-    const { email, setEmail, password, setPassword, handleLogin, 
-            handleSignup, hasAccount, setHasAccount, emailError, passwordError } = useContext(AuthenticationContext);
+    const { 
+        email, 
+        setEmail, 
+        password, 
+        setPassword, 
+        handleLogin, 
+        handleSignup, 
+        hasAccount, 
+        setHasAccount, 
+        emailError, 
+        passwordError 
+    } = useContext(AuthenticationContext);
+    
     return ( 
         <section className="login">
             <div className="login-container">

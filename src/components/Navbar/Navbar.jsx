@@ -2,35 +2,46 @@ import React, { useContext } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
 import { AuthenticationContext } from '../../contexts/AuthenticationContext';
+import mainLogo from '../../images/nav_logo.png';
 
 const Navbar = () => {
 
     const {user, handleLogout} = useContext(AuthenticationContext);
 
     return ( 
-        <div className="navbar">  
-            <div className="navbar-logo"><h2>Logo</h2></div>
-            <div className="navbar-menuItems">
+        <nav className="navbar">  
+            <div className="navbar__logo">
+                <Link to={ user ? "/home" : "/" }>
+                    <img src={mainLogo} alt="main logo"/>
+                </Link>
+            </div>
+
+            <div className="navbar__menu-items">
                 <ul>
-                    <Link to="/users">
-                        <li>Users</li>  
+                    <Link to={ !user ? "/login" : "/users"}>
+                        <li>Meet our team</li> 
                     </Link>
+                    <Link>
+                        <li>Contact us</li>
+                    </Link>
+                    
                 </ul>    
-            </div>          
-            <div className="navbar-log">
-                { user ? 
-                <Link to="/">
-                    <h3 onClick={handleLogout}>Logout</h3>
-                </Link>
-                 :
-                <Link to="/login">    
-                    <h3>Login</h3>
-                </Link>
-                }
-                
-                
+            </div>
+
+            <div className="navbar__auth">
+                <ul>
+                    { user ? 
+                    
+                        <li onClick={handleLogout}>Logout</li>
+                    
+                    :
+                    <Link to="/login">    
+                        <li>Login</li>
+                    </Link>
+                    }
+                </ul>               
             </div>           
-        </div>
+        </nav>
      );
 }
  

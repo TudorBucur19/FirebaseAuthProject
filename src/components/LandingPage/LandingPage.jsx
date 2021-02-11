@@ -10,29 +10,15 @@ import UserInfo from '../UserInfo/UserInfo';
 
 const LandingPage = () => {
 
-    const {user} = useContext(AuthenticationContext);
+    const { user } = useContext(AuthenticationContext);
     return ( 
-        <Router>
-          <div className="container">
-              <Navbar/>
-              
-              <Switch>
-                { !user ?
-                <div>
-                  <h2>Wellcome!</h2>
-                  <Route exact path="/login" component={Login}/>
-                </div>               
-                :
-                <div>
-                  <Route path="/home" component={Home}/> 
-                  <Route path="/users" exact component={Users}/>
-                  <Route path="/users/:id" component={UserInfo}/>
-                </div>      
-                }                        
-              </Switch>
-            
+        
+          <div className="container">                
+              <div className="landing-message">
+                <h2 className="message">Welcome! Please Sign In</h2>
+              </div>                                                    
           </div>
-        </Router>
+        
      );
 }
  

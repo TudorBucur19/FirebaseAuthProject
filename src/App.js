@@ -1,8 +1,11 @@
 import './App.scss';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import LandingPage from './components/LandingPage/LandingPage';
 import AuthenticationContextProvider from './contexts/AuthenticationContext';
+import SwitchRoutes from './SwitchRoutes';
+import { ROUTES } from './Routes';
+import LandingPage from './components/LandingPage/LandingPage';
+import Navbar from './components/Navbar/Navbar';
 
 
 
@@ -12,7 +15,8 @@ function App() {
     <Router>      
       <div className="App">  
         <AuthenticationContextProvider> 
-          <LandingPage/>
+          <Navbar/>
+          <SwitchRoutes routes={ROUTES}/>          
         </AuthenticationContextProvider>     
           
       </div>      

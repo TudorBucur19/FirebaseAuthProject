@@ -1,17 +1,18 @@
 @import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
 @import '../../scss//extends.scss';
 
-.landing-message {
+
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('../../images/homepageBg.jpg');
     background-size: cover;
-    height: 100vh;
+    height: 90vh;
 
-    .message {
+    .welcome-message {
         @extend %element-box;
-        @extend %welcome-message;
-        margin-top: -20vh;       
+        @extend %welcome-message;        
     }
 }
-

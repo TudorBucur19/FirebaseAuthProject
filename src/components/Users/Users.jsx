@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import './Users.scss';
 import {Link} from 'react-router-dom';
 
 const Users = () => {
 
     useEffect(() => {
         fetchItems();
-    }, [])
+    }, []);
     
     const [users, setUsers] = useState([]);
         
@@ -18,7 +19,7 @@ const Users = () => {
         
     }
     return ( 
-        <div>
+        <div className="user-list__container">
             {users.map(user => (
                 <h3 key={user.id}>                   
                 <Link to={`/users/${user.id}`}>{user.name}</Link>

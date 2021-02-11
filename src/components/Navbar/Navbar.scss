@@ -1,29 +1,52 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
+
 .navbar {
     display: flex;
-    max-width: 100%;
-    background-color: yellowgreen;
-    justify-content: space-between;
+    @include size($max-width: 100%, $max-height: 100%);
+    background-color: $header-color;
+    justify-content: space-between;    
     padding: 0 3% 0 3%;
     cursor: pointer;
     font-weight: bold;
 
-    .navbar-logo {
-        flex-grow: 1;
+    a {
+        display: flex;
+        text-decoration: none;
+        height: 100%;
+        align-items: center;
+        margin-right: 2%;
+        
     }
 
-    .navbar-menuItems {
+    &__logo {
+        flex-grow: 1;
+
+        img {
+            max-height: 70px;
+        }
+        
+    }
+
+    &__menu-items {
         display: flex;
         flex-grow: 6;
-        font-size: 1.3em;
-
+                
         ul {
-            list-style: none;       
+            @extend %nav-lists;      
         }
     }
 
-    .navbar-log {
+    &__auth {
         display: flex;
         flex-grow: 1;
-        justify-content: flex-end;        
+        justify-content: flex-end;
+        
+        ul {
+            @extend %nav-lists;
+            justify-content: flex-end;
+        }
     }
 }
+

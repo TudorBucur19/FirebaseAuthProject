@@ -1,0 +1,8 @@
+@import './variables.scss';
+
+@mixin size($width: null, $height: null, $max-width: null, $max-height: null) {
+    width: $width;
+    height: $height;
+    max-width: $max-width;
+    max-height: $max-height;
+}

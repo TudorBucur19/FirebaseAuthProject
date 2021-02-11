@@ -1,3 +1,7 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
+@import '../../scss/extends.scss';
+
 .login {
     display: flex;
     align-items: center;
@@ -6,16 +10,14 @@
     
 
     .login-container {
+        @extend %element-box;
         background-color: rgb(127, 94, 204);
         display: flex;
         width: 15%;        
         flex-direction: column;
         justify-content: space-around;
         padding: 2%;
-        margin-top: -10%;
-        border-radius: 6px;
-        box-shadow: 10px 10px 5px grey;
-                
+        margin-top: -10%;                
 
         input {
             padding: 0.5rem;
@@ -26,6 +28,18 @@
         label {
             font-weight: bold;
         }
+
+        // button {
+        //     background-color: rgb(127, 94, 204);
+        //     border: 2px solid rgb(29, 1, 65);
+        //     padding: 0.5rem;
+        //     font-weight: bold;
+        //     color: white;
+
+        //     &:hover {
+        //         background-color: $header-color;
+        //     }
+        // }
 
         button {
             background: rgb(29, 1, 65);
@@ -48,7 +62,7 @@
             padding: 0.5rem;
             border-radius: 6px;
             &:hover {
-                background: yellowgreen;
+                background: $header-color;
             }
         }
     }

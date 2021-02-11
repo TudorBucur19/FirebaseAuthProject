@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import fire from '../utils/fire';
 
 export const AuthenticationContext = createContext();
@@ -11,6 +12,8 @@ const AuthenticationContextProvider = (props) => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
+
+  const history = useHistory();
 
   const clearInputs = () => {
     setEmail('');
@@ -39,6 +42,7 @@ const AuthenticationContextProvider = (props) => {
             break;
           }
       });
+      history.push("/home");
   };
 
   const handleSignup = () => {
@@ -61,6 +65,7 @@ const AuthenticationContextProvider = (props) => {
 
   const handleLogout = () =>  {
     fire.auth().signOut();
+    history.push('/');
   };
 
   const authListener = () => {

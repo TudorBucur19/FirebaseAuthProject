@@ -1,0 +1,48 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
+@import '../../scss/extends.scss';
+
+.card-info {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 90vh;
+}
+
+.card-info__container {
+    @extend %element-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 22%;
+    background-color: $header-color;
+    align-items: flex-start;
+    
+
+
+    .card-info__container__photo {
+       padding: 2%;
+       align-self: center;
+       max-width: 35%;
+
+       &:hover {
+        transform: scale(1.2);
+        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        ;
+       }
+    }
+
+    .card-info__container__text {
+        padding: 1% 1% 1% 2%;
+        max-width: 60%;
+
+        h3 {
+            text-transform: uppercase;
+        }
+
+        .card-info__container__text_website {
+            color: rgb(218, 63, 63);
+            font-weight: bold;
+        }
+    }
+}
+

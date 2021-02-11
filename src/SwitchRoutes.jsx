@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import { AuthenticationContext } from './contexts/AuthenticationContext';
 import RoutesWithSubRoutes from './Routes';
 
@@ -7,6 +7,13 @@ import RoutesWithSubRoutes from './Routes';
 const SwitchRoutes = ({ routes }) => {
     const { user } = useContext(AuthenticationContext);
     const history = useHistory();
+
+    useEffect(() => {
+        if(!user){
+            history.push('/login');
+        }
+        history.push('/');
+    }, [])
     
     return (
         <Switch>

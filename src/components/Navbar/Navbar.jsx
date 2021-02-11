@@ -11,7 +11,7 @@ const Navbar = () => {
     return ( 
         <nav className="navbar">  
             <div className="navbar__logo">
-                <Link to={ user ? "/home" : "/" }>
+                <Link to={ user ? "/" : "/login" }>
                     <img src={mainLogo} alt="main logo"/>
                 </Link>
             </div>
@@ -21,7 +21,7 @@ const Navbar = () => {
                     <Link to={ !user ? "/login" : "/users"}>
                         <li>Meet our team</li> 
                     </Link>
-                    <Link>
+                    <Link to="/contact">
                         <li>Contact us</li>
                     </Link>
                     

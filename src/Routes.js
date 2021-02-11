@@ -5,15 +5,16 @@ import Users from './components/Users/Users';
 import UserInfo from './components/UserInfo/UserInfo';
 import Home from './components/Home/Home';
 import LandingPage from './components/LandingPage/LandingPage';
+import ContactPage from './components/ContactPage/ContactPage';
 
 
  export const ROUTES = [
-    {
-        path: "/",
-        key: "ROOT",
-        exact: true,
-        component: LandingPage
-    },
+    // {
+    //     path: "/",
+    //     key: "ROOT",
+    //     exact: true,
+    //     component: LandingPage
+    // },
 
     {
         path: "/login",
@@ -23,9 +24,9 @@ import LandingPage from './components/LandingPage/LandingPage';
     },
 
     {
-        path: "/home",
+        path: "/",
         key: "HOME",
-        exact: false,
+        exact: true,
         component: Home
     },
 
@@ -42,6 +43,13 @@ import LandingPage from './components/LandingPage/LandingPage';
         key: "USERS_ID",
         exact: true,
         component: UserInfo
+    },
+
+    {
+        path: "/contact",
+        key: "CONTACT",
+        exact: false,
+        component: ContactPage
     }
 
     

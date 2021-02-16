@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .user-list__container {
     display: flex;
     flex-direction: column;
@@ -13,8 +15,8 @@
             padding: 0.5rem;
     
             &:hover {
-                color: red;
-                background-color: yellowgreen;
+                color: white;
+                background-color: $hover-color;
                 border-radius: 6px;                
             }
         }

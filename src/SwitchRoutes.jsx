@@ -8,16 +8,16 @@ const SwitchRoutes = ({ routes }) => {
     const { user } = useContext(AuthenticationContext);
     const history = useHistory();
 
-    useEffect(() => {
-        if(!user){
-            history.push('/login');
-        }
-        history.push('/');
-    }, [])
+    // useEffect(() => {
+    //     if(!user){
+    //         history.push('/login');
+    //     }
+    //     history.push('/');
+    // }, [])
     
     return (
         <Switch>
-            {routes.map((route) => {
+            {routes.map((route, i) => {
                 return <RoutesWithSubRoutes key={route.key} {...route}/>
             })        
             }

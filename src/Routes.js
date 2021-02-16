@@ -6,15 +6,16 @@ import UserInfo from './components/UserInfo/UserInfo';
 import Home from './components/Home/Home';
 import LandingPage from './components/LandingPage/LandingPage';
 import ContactPage from './components/ContactPage/ContactPage';
+import SwitchRoutes from './SwitchRoutes';
 
 
  export const ROUTES = [
-    // {
-    //     path: "/",
-    //     key: "ROOT",
-    //     exact: true,
-    //     component: LandingPage
-    // },
+    {
+        path: "/",
+        key: "ROOT",
+        exact: true,
+        component: LandingPage
+    },
 
     {
         path: "/login",
@@ -23,11 +24,13 @@ import ContactPage from './components/ContactPage/ContactPage';
         component: Login
     },
 
+        
     {
-        path: "/",
+        path: "/home",
         key: "HOME",
         exact: true,
-        component: Home
+        component: Home,
+       
     },
 
     {
@@ -50,14 +53,17 @@ import ContactPage from './components/ContactPage/ContactPage';
         key: "CONTACT",
         exact: false,
         component: ContactPage
-    }
-
+    }   
     
 ];
 
 const RoutesWithSubRoutes = (route) => {
     return (        
-      <Route exact={route.exact} path={route.path} component={route.component} />
+      <Route 
+      exact={route.exact} 
+      path={route.path} 
+      component={route.component} 
+      />
     )                     
 }
  

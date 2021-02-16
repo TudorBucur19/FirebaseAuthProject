@@ -42,6 +42,7 @@ const AuthenticationContextProvider = (props) => {
             break;
           }
       });
+      history.push('/home');
   };
 
   const handleSignup = () => {
@@ -64,6 +65,7 @@ const AuthenticationContextProvider = (props) => {
 
   const handleLogout = () =>  {
     fire.auth().signOut();
+    history.push('/');
   };
 
   const authListener = () => {
@@ -75,6 +77,7 @@ const AuthenticationContextProvider = (props) => {
         setUser("");
       }
     })
+    
   };
 
   useEffect(() => {

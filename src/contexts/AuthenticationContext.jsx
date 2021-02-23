@@ -42,7 +42,7 @@ const AuthenticationContextProvider = (props) => {
             break;
           }
       });
-      history.push('/home');
+      // history.push('/home');
   };
 
   const handleSignup = () => {
@@ -65,7 +65,7 @@ const AuthenticationContextProvider = (props) => {
 
   const handleLogout = () =>  {
     fire.auth().signOut();
-    history.push('/');
+    // history.push('/');
   };
 
   const authListener = () => {

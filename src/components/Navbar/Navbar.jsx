@@ -11,14 +11,14 @@ const Navbar = () => {
     return ( 
         <nav className="navbar">  
             <div className="navbar__logo">
-                <Link to={ user ? "/" : "/login" }>
+                <Link to={ "/" }> 
                     <img src={mainLogo} alt="main logo"/>
                 </Link>
             </div>
 
             <div className="navbar__menu-items">
                 <ul>
-                    <Link to={ !user ? "/login" : "/users"}>
+                    <Link to={"/users"}>
                         <li>Meet our team</li> 
                     </Link>
                     <Link to="/contact">
@@ -30,10 +30,8 @@ const Navbar = () => {
 
             <div className="navbar__auth">
                 <ul>
-                    { user ? 
-                    
+                    { user ?                     
                         <li onClick={handleLogout}>Logout</li>
-                    
                     :
                     <Link to="/login">    
                         <li>Login</li>

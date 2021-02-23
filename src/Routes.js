@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Users from './components/Users/Users';
@@ -6,7 +6,7 @@ import UserInfo from './components/UserInfo/UserInfo';
 import Home from './components/Home/Home';
 import LandingPage from './components/LandingPage/LandingPage';
 import ContactPage from './components/ContactPage/ContactPage';
-import SwitchRoutes from './SwitchRoutes';
+
 
 
  export const ROUTES = [
